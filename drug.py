@@ -1,23 +1,24 @@
 # app.py
 import streamlit as st
+st.image("logo.jpg", width=170)
+
 st.title("Care For Life Foundation Drug Verifier")
-st.image("logo.jpg", width=120)
 nafdac_registry = {
     "04-0411": {
         "Name": "Emzor 500 mg tablet",
-        "Status": "Verified", 
+        "Status": "Verified",
         "Producer": "Emzor",
         "Category": "Malaria Frontline",
         "Active Ingredient": "Paracetamol"
     },
-    "B4-0262": {
+    "04-9927": {
         "Name": "Lonart DS Arthemether/Lumefantrine(80/480mg)",
         "Status": "Verified",
         "Category": "Malaria Frontline",
         "Producer": "Greenlife Pharmaceuticals",
         "Active Ingredient": "Arthemether/Lumefantrine"
     },
-    "04-9927": {
+    "04-3275": {
         "Name": "Coartem",
         "Status": "Verified",
         "Category": "Malaria Frontline",
@@ -136,11 +137,536 @@ nafdac_registry = {
         "Producer": "May & Baker Nigeria PLC",
         "Active Ingredient": "Diphenhydramine/Ammonium Chloride/ Sodium Citrate/Menthol"
     },
-    "B4-5980": {
-        "Name": "Masedyl All-Day",
+    "A4-1680": {
+        "Name": "Coartem",
         "Status": "Verified",
-        "Category": "Multi-Symptom Cold & Flu",
-        "Producer": "May & Baker Nigeria PLC",
+        "Category": "Antimalarial",
+        "Producer": "Novartis Nigeria Ltd",
+        "Active Ingredient": "Arthemeter/Lumefantrine"
+    },
+    "B4-0262": {
+        "Name": "Coartem",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Novartis Nigeria Ltd",
+        "Active Ingredient": "Arthemeter/Lumefantrine"
+    },
+    "04-0005": {
+        "Name": "Panadol Extra Caplet",
+        "Status": "Verified",
+        "Category": "Analgesic",
+        "Producer": "GlaxoSmithKline Consumer Nigeria PLC",
+        "Active Ingredient": "Paracetamol(500mg) + Caffeine(65mg)"
+    },
+    "04-0373": {
+        "Name": "Buscopan Tablets(10mg)",
+        "Status": "Verified",
+        "Category": "Antispasmodic",
+        "Producer": "Boehringer Ingelheim",
+        "Active Ingredient": "Hyoscine Butylbromide(10mg)"
+    },
+    "04-9495": {
+        "Name": "P-Alaxin (Dihydroartemisinin 40 mg & Piperaquine 320 mg) Tablets",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Greenlife Pharmaceutical Limited",
+        "Active Ingredient": "Dihydroartemisinin; Piperaquine Phosphate"
+    },
+"A4-100926": {
+        "Name": "P-Alaxin 20/160 Dispersible Tablet",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Greenlife Pharmaceutical Limited",
+        "Active Ingredient": "Dihydroartemisinin; Piperaquine Phosphate"
+    },
+"A4-100927": {
+        "Name": "P-Alaxin 20/160 Dispersible Tablet",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Greenlife Pharmaceutical Limited",
+        "Active Ingredient": "Dihydroartemisinin; Piperaquine Phosphate"
+    },
+    "A4-100810": {
+        "Name": "P-Alaxin 40/320 Dispersible Tablet",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Greenlife Pharmaceutical Limited",
+        "Active Ingredient": "Dihydroartemisinin; Piperaquine Phosphate"
+    },
+    "B4-8892": {
+        "Name": "P-Alaxin TS",
+        "Status": "Inactive",
+        "Category": "Antimalarial",
+        "Producer": "Greenlife Pharmaceutical Limited",
+        "Active Ingredient": "Dihydroartemisinin; Piperaquine Phosphate"
+    },
+    "04-8970": {
+        "Name": "Lonart 20/120 Powder For Oral Suspension",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Greenlife",
+        "Active Ingredient": "Artemether; Lumefantrine"
+    },
+    "A4-4238": {
+        "Name": "Lonart Dispersible Tablets",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Greenlife",
+        "Active Ingredient": "Artemether; Lumefantrine"
+    },
+    "04-8969": {
+        "Name": "Lonart Tablets",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Greenlife",
+        "Active Ingredient": "Artemether; Lumefantrine"
+    },
+    "A4-1680": {
+        "Name": "Coartem 20/120 Dispersible Tablets",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Novartis Nigeria Ltd",
+        "Active Ingredient": "Artemether; Lumefantrine"
+    },
+    "B4-0262": {
+        "Name": "Coartem 80/480 Tablets",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Novartis Nigeria Ltd",
+        "Active Ingredient": "Artemether; Lumefantrine"
+    },
+    "": {
+        "Name": "Amatem 20/120 Softgel",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Elbe Pharma Nigeria Limited",
+        "Active Ingredient": "Artemether; Lumefantrine"
+    },
+    "": {
+        "Name": "Amatem Forte Soft Gel Capsules",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Elbe Pharma Nigeria Limited",
+        "Active Ingredient": "Artemether; Lumefantrine"
+    },
+    "": {
+        "Name": "",
+        "Status": "Verified",
+        "Category": "Antimalarial",
+        "Producer": "Elbe Pharma Nigeria Limited",
+        "Active Ingredient": "Artemether; Lumefantrine"
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
+        "Active Ingredient": ""
+    },
+    "": {
+        "Name": "",
+        "Status": "",
+        "Category": "",
+        "Producer": "",
         "Active Ingredient": ""
     },
 }
@@ -154,6 +680,8 @@ if Drug in nafdac_registry:
     st.write(f"Producer : {info['Producer']}")
     st.write(f"Category : {info['Category']}")
     st.write(f"Active Ingredient: {info['Active Ingredient']}")
+elif Drug =="":
+    st.write("Waiting for input")
 else:
     st.error("Warning, Drug not foud")
     st.warning("Make sure of correct input or Check NAFDAC greenbook")
