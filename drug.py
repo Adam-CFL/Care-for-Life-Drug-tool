@@ -235,22 +235,22 @@ nafdac_registry = {
         "Producer": "Novartis Nigeria Ltd",
         "Active Ingredient": "Artemether; Lumefantrine"
     },
-    "": {
+    "B4-0953": {
         "Name": "Amatem 20/120 Softgel",
         "Status": "Verified",
         "Category": "Antimalarial",
         "Producer": "Elbe Pharma Nigeria Limited",
         "Active Ingredient": "Artemether; Lumefantrine"
     },
-    "": {
+    "B4-0952": {
         "Name": "Amatem Forte Soft Gel Capsules",
         "Status": "Verified",
         "Category": "Antimalarial",
         "Producer": "Elbe Pharma Nigeria Limited",
         "Active Ingredient": "Artemether; Lumefantrine"
     },
-    "": {
-        "Name": "",
+    "A4-3489": {
+        "Name": "Amatem Forte Tablets",
         "Status": "Verified",
         "Category": "Antimalarial",
         "Producer": "Elbe Pharma Nigeria Limited",
@@ -260,56 +260,56 @@ nafdac_registry = {
         "Name": "",
         "Status": "",
         "Category": "",
-        "Producer": "",
+        "Producer": "Emzor Pharmaceutical Industries Limited",
         "Active Ingredient": ""
     },
     "": {
         "Name": "",
         "Status": "",
         "Category": "",
-        "Producer": "",
+        "Producer": "Emzor Pharmaceutical Industries Limited",
         "Active Ingredient": ""
     },
     "": {
         "Name": "",
         "Status": "",
         "Category": "",
-        "Producer": "",
+        "Producer": "Emzor Pharmaceutical Industries Limited",
         "Active Ingredient": ""
     },
     "": {
         "Name": "",
         "Status": "",
         "Category": "",
-        "Producer": "",
+        "Producer": "Emzor Pharmaceutical Industries Limited",
         "Active Ingredient": ""
     },
     "": {
         "Name": "",
         "Status": "",
         "Category": "",
-        "Producer": "",
+        "Producer": "Emzor Pharmaceutical Industries Limited",
         "Active Ingredient": ""
     },
     "": {
         "Name": "",
         "Status": "",
         "Category": "",
-        "Producer": "",
+        "Producer": "Emzor Pharmaceutical Industries Limited",
         "Active Ingredient": ""
     },
     "": {
         "Name": "",
         "Status": "",
         "Category": "",
-        "Producer": "",
+        "Producer": "Emzor Pharmaceutical Industries Limited",
         "Active Ingredient": ""
     },
     "": {
         "Name": "",
         "Status": "",
         "Category": "",
-        "Producer": "",
+        "Producer": "Emzor Pharmaceutical Industries Limited",
         "Active Ingredient": ""
     },
     "": {
@@ -686,3 +686,9 @@ else:
     st.error("Warning, Drug not foud")
     st.warning("Make sure of correct input or Check NAFDAC greenbook")
     st.markdown("https://greenbook.nafdac.gov.ng/")
+
+
+
+st.write("Warning Signs of Fake Drugs found below;")
+
+st.image(f"Ws.jpg", width=280)
