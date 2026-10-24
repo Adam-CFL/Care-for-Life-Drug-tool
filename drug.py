@@ -157,3 +157,8 @@ if warning_image_path.exists():
     )
 else:
     st.warning(f"Image not found: {warning_image_path}")
+with st.expander("🚨 Suspect this product is fake? Take Action"):
+    st.write("If the packaging or physical check doesn't match, do not consume it. Report it immediately to the regulators:")
+    st.markdown("- **Call NAFDAC Hotline:** [0800-1-623322](tel:08001623322)")
+    st.markdown("- **Email Evidence:** [reforms@nafdac.gov.ng](mailto:reforms@nafdac.gov.ng)")
+    st.write("Your report helps NAFDAC track down counterfeiters and protect the public.")
