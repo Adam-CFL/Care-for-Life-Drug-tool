@@ -153,7 +153,7 @@ if warning_image_path.exists():
             "the Philippine FDA; it is not NAFDAC guidance and does not apply "
             "to other medicines."
         ),
-        width=600,
+        width=200,
     )
 else:
     st.warning(f"Image not found: {warning_image_path}")
