@@ -691,4 +691,4 @@ else:
 
 st.write("Warning Signs of Fake Drugs found below;")
 
-st.image(f"Ws.jpg", width=280)
+st.image(f"Ws.jpg", width=210)
