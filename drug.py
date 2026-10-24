@@ -691,4 +691,14 @@ else:
 
 st.write("Warning Signs of Fake Drugs found below;")
 
-st.image(f"Ws.jpg", width=210)
+from pathlib import Path
+from PIL import Image
+import streamlit as st
+
+image_path = Path(__file__).resolve().parent / "Ws.jpg"
+
+if image_path.exists():
+    image = Image.open(image_path)
+    st.image(image, caption="WS image", width=210)
+else:
+    st.warning(f"Image not found: {image_path}")
