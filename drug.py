@@ -699,6 +699,6 @@ image_path = Path(__file__).resolve().parent / "Ws.jpg"
 
 if image_path.exists():
     image = Image.open(image_path)
-    st.image(image, caption="WS image", width=210)
+    st.image(image, caption="WS image", width=140)
 else:
     st.warning(f"Image not found: {image_path}")
