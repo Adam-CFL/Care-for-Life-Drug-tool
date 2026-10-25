@@ -157,11 +157,8 @@ if warning_image_path.exists():
     )
 else:
     st.warning(f"Image not found: {warning_image_path}")
-with st.expander("🚨 Suspect this product is fake? Take Action"):
-    st.write("If the packaging or physical check doesn't match, do not consume it. Report it immediately to the regulators:")
-    st.markdown("- **Call NAFDAC Hotline:** [0800-1-623322](tel:08001623322)")
-    st.markdown("- **Email Evidence:** [reforms@nafdac.gov.ng](mailto:reforms@nafdac.gov.ng)")
-    st.write("Your report helps NAFDAC track down counterfeiters and protect the public.")
+
+
 import urllib.parse
 
 # Inside your results display section:
@@ -191,8 +188,8 @@ import streamlit as st
 
 # Emergency NAFDAC Contact Details (Official Hotline / Support)
 # (You can adjust the number/email to match the exact official lines you're using)
-nafdac_phone = "+23414609750" 
-nafdac_email = "nafdac@nafdac.gov.ng"
+nafdac_phone = "+2348001623322"  # Official NAFDAC toll-free complaint line
+nafdac_email = "reforms@nafdac.gov.ng"
 
 st.markdown("---")
 st.subheader("🚨 Emergency NAFDAC Action")
@@ -222,9 +219,6 @@ with col2:
     </a>
     '''
     st.markdown(email_html, unsafe_allow_html=True)
-    # The actual official NAFDAC toll-free complaint line
-nafdac_hotline = "08001623322" 
-nafdac_email = "reforms@nafdac.gov.ng"
-
+    st.write("Your report helps NAFDAC detect counterfeiters and protect the public. Please provide as much detail as possible, including product name, registration number, and where it was purchased.")
 # In your HTML button href:
 # href="tel:08001623322"
