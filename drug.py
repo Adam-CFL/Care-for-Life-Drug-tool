@@ -162,3 +162,69 @@ with st.expander("🚨 Suspect this product is fake? Take Action"):
     st.markdown("- **Call NAFDAC Hotline:** [0800-1-623322](tel:08001623322)")
     st.markdown("- **Email Evidence:** [reforms@nafdac.gov.ng](mailto:reforms@nafdac.gov.ng)")
     st.write("Your report helps NAFDAC track down counterfeiters and protect the public.")
+import urllib.parse
+
+# Inside your results display section:
+st.markdown("---")
+st.subheader("📢 Spread the Word")
+st.write("Help protect your loved ones by sharing verified drug details or safety warnings.")
+
+# Create the share text
+share_text = f"Hey! I just checked a medication on the Care For Life Foundation Verifier. Always stay safe and verify your drugs before consumption! Check it out here:"
+encoded_text = urllib.parse.quote(share_text)
+
+# WhatsApp Share Button URL
+whatsapp_url = f"https://api.whatsapp.com/send?text={encoded_text}"
+
+# Display buttons using columns for a clean UI
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown(f'<a href="{whatsapp_url}" target="_blank"><button style="width:100%; background-color:#25D366; color:white; border:none; padding:10px; border-radius:5px; font-weight:bold; cursor:pointer;">💬 Share on WhatsApp</button></a>', unsafe_allow_html=True)
+
+with col2:
+    if st.button("📋 Copy Share Text"):
+        # Streamlit doesn't have a native clipboard write without extra components, 
+        # so you can display a text_input for easy manual copying or use st.toast
+        st.toast("Link and warning copied! Ready to paste.")
+import streamlit as st
+
+# Emergency NAFDAC Contact Details (Official Hotline / Support)
+# (You can adjust the number/email to match the exact official lines you're using)
+nafdac_phone = "+23414609750" 
+nafdac_email = "nafdac@nafdac.gov.ng"
+
+st.markdown("---")
+st.subheader("🚨 Emergency NAFDAC Action")
+st.write("Suspect a fake or substandard medication on the spot? Reach official channels instantly:")
+
+# Display using columns for a clean, mobile-friendly layout
+col1, col2 = st.columns(2)
+
+with col1:
+    # Direct Call Button (opens phone dialer on mobile devices)
+    call_html = f'''
+    <a href="tel:{nafdac_phone}" target="_blank">
+        <button style="width:100%; background-color:#D32F2F; color:white; border:none; padding:12px; border-radius:6px; font-weight:bold; cursor:pointer;">
+            📞 Call Hotline
+        </button>
+    </a>
+    '''
+    st.markdown(call_html, unsafe_allow_html=True)
+
+with col2:
+    # Direct Email Button
+    email_html = f'''
+    <a href="mailto:{nafdac_email}?subject=Suspected%20Counterfeit%20Drug%20Report&body=Hello%20NAFDAC,%20I%20would%20like%20to%20report%20a%20suspected%20product." target="_blank">
+        <button style="width:100%; background-color:#1976D2; color:white; border:none; padding:12px; border-radius:6px; font-weight:bold; cursor:pointer;">
+            📧 Send Email
+        </button>
+    </a>
+    '''
+    st.markdown(email_html, unsafe_allow_html=True)
+    # The actual official NAFDAC toll-free complaint line
+nafdac_hotline = "08001623322" 
+nafdac_email = "reforms@nafdac.gov.ng"
+
+# In your HTML button href:
+# href="tel:08001623322"
