@@ -80,6 +80,20 @@ def search_greenbook(registration_number):
     return records
 
 
+def sms_verification_search_url(record):
+    search_terms = " ".join(
+        value
+        for value in (
+            record.get("product_name"),
+            record.get("NAFDAC"),
+            record.get("applicant_name"),
+            "Nigeria SMS scratch verification",
+        )
+        if value
+    )
+    return f"https://www.google.com/search?{urlencode({'q': search_terms})}"
+
+
 st.image(str(Path(__file__).resolve().parent / "logo.jpg"), width=170)
 st.title("Care For Life Foundation Drug Verifier")
 st.caption(
@@ -129,6 +143,17 @@ if submitted:
                     st.write(f"Status: {record.get('status') or 'Not listed'}")
                     st.write(
                         f"Category: {record.get('category_name') or 'Not listed'}"
+                    )
+                    st.write("SMS scratch verification: Unconfirmed")
+                    st.markdown(
+                        "[Search external sources for this product]("
+                        f"{sms_verification_search_url(record)})"
+                    )
+                    st.caption(
+                        "The Greenbook does not list SMS scratch-code coverage. "
+                        "Check the product pack for a scratch panel and use only "
+                        "the SMS instructions printed on that pack; no external "
+                        "search result alone confirms authenticity."
                     )
                     st.write(
                         "Active ingredients: "
